@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    color: #333;
+    background-color: #f5f5f5;
+  }
+}
+
+@layer components {
+  .weather-card {
+    @apply bg-white rounded-lg shadow-sm border border-sinoptik-border p-4;
+  }
+  
+  .weather-icon {
+    @apply w-8 h-8 object-contain;
+  }
+  
+  .temperature {
+    @apply font-bold text-lg;
+  }
+  
+  .city-link {
+    @apply text-sinoptik-blue hover:underline cursor-pointer;
+  }
+  
+  .modal-overlay {
+    @apply fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50;
+  }
+  
+  .modal-content {
+    @apply bg-white rounded-lg p-6 max-w-md w-full mx-4 relative;
+  }
+  
+  .btn-primary {
+    @apply bg-sinoptik-blue text-white px-6 py-2 rounded hover:bg-sinoptik-dark-blue transition-colors;
+  }
+  
+  .btn-secondary {
+    @apply bg-gray-300 text-gray-700 px-6 py-2 rounded hover:bg-gray-400 transition-colors;
+  }
+}
+
+.weather-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
+}
+
+.forecast-day {
+  text-align: center;
+  padding: 8px;
+  border-right: 1px solid #e0e0e0;
+}
+
+.forecast-day:last-child {
+  border-right: none;
+}
+
+.weather-details {
+  font-size: 11px;
+  color: #666;
+}
+
+.current-weather {
+  background: linear-gradient(135deg, #e8f4fd 0%, #ffffff 100%);
+}
